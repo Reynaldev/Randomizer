@@ -6,13 +6,29 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script lang="javascript" src="/script.js"></script>
+ 
+        <!-- Popper -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+        <!-- Bootstrap -->
+        <link href="/source/bootstrap-5.2.2-dist/css/bootstrap.min.css">
+        <script src="/source/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+
+        <!-- JQuery -->
+        <script src="/source/jquery-3.6.1.min.js"></script>
+        
+        <!-- Styling -->
+        <link rel="stylesheet" href="/source/style.css"></link>
+        <script src="/source/script.js"></script>
     </head>
-    <body>
-        <!-- <form name="inputForm" onsubmit="return validateForm()">
-            <input type="text" name="inputText">
-            <input type="submit" value="Submit">
-        </form> -->
+    <body oncopy="Copy()">
+        <h2 id="Title">Randomizer</h2>
+
+        <h2 id="RandomizedText"></h2>
+
+        <input type="submit" value="Randomize" onclick="Randomize()">
+
+        <br><br><br>
 
         <input id="InputText" type="text" >
         <input type="submit" value="Submit" onclick="InputTextToArray()">
@@ -20,9 +36,15 @@
         <table id="TextTable" border="1">
             <tr>
                 <th>No.</th>
-                <th>Text</th>
-                <th>Action</th>
+                <th>Words</th>
             </tr>
         </table>
+
+        <input type="submit" value="Delete" onclick="DeleteData()">
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy;copyright 2022, Made by <a href="">ReynDev</a></p>
+        </footer>
     </body>
 </html>
