@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Word Picker | Random word or text picker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
  
@@ -11,8 +11,8 @@
         <script src="https://unpkg.com/@popperjs/core@2"></script>
 
         <!-- Bootstrap -->
-        <link href="/source/bootstrap-5.2.2-dist/css/bootstrap.min.css">
-        <script src="/source/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
         <!-- JQuery -->
         <script src="/source/jquery-3.6.1.min.js"></script>
@@ -21,30 +21,53 @@
         <link rel="stylesheet" href="/source/style.css"></link>
         <script src="/source/script.js"></script>
     </head>
-    <body oncopy="Copy()">
-        <h2 id="Title">Randomizer</h2>
+    <body onload="Ready()" oncopy="Copy()" onkeypress="Shortcut()">
+        <!-- Content -->
+        <div id="content">
+            <div id="Title">
+                <h2>Word Picker</h2>
+                <p>Input your words, and the site will randomly picked it :)</p>
+            </div>
 
-        <h2 id="RandomizedText"></h2>
+            <h2 id="RandomizedText"></h2>
 
-        <input type="submit" value="Randomize" onclick="Randomize()">
+            <br><br><br>
 
-        <br><br><br>
+            <input id="ButtonSubmit" class="btn" type="submit" value="Randomize" onclick="Randomize()">
 
-        <input id="InputText" type="text" >
-        <input type="submit" value="Submit" onclick="InputTextToArray()">
+            <br><br><br>
 
-        <table id="TextTable" border="1">
-            <tr>
-                <th>No.</th>
-                <th>Words</th>
-            </tr>
-        </table>
+            <div class="input-group container-sm">
+                <span class="input-group-text">Input</span>
+                <input class="form-control" id="InputText" type="text" placeholder="Some word...">
+                <input id="ButtonSubmit" class="btn" type="button" value="Submit" onclick="InputTextToArray()">
+            </div>
 
-        <input type="submit" value="Delete" onclick="DeleteData()">
+            <br><br><br>
+
+            <div class="container-sm">
+                <table id="TextTable" class="table table-light table-bordered" style="width: 100%;">
+                    <thead>
+                        <tr class="table-dark">
+                            <th class="col-1">#</th>
+                            <th class="col-4">Words</th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableBody">
+                        <!-- Words Data -->
+                    </tbody>
+                </table>
+            </div>
+
+            <br><br><br>
+
+            <input class="btn btn-warning" type="submit" value="Delete" onclick="DeleteData()">
+            <input class="btn btn-danger" type="submit" value="Delete All" onclick="DeleteAllData()">
+        </div>
 
         <!-- Footer -->
         <footer>
-            <p>&copy;copyright 2022, Made by <a href="">ReynDev</a></p>
+            <p>&copy;copyright 2022, Made by <a href="https://github.com/ReynaldyNC" target="_blank" style="color: aliceblue; text-decoration: none;">ReynDev</a></p>
         </footer>
     </body>
 </html>

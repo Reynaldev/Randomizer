@@ -4,20 +4,18 @@
 
 body {
     background-color: blueviolet;
-
-    position: absolute;
-    left: 25%;
-    right: 25%;
-
-    text-align: center;
 }
 
 footer {
     background-color: black;
 
-    position: absolute;
+    position: -webkit-sticky;
+    position: sticky;
+    padding: 50px 0 50px 0;
     width: 100%;
+    top: 0;
 
+    text-align: center;
     color: aliceblue;
 }
 
@@ -28,6 +26,29 @@ footer {
     color: aliceblue;
 }
 
+#content {
+    left: 25%;
+    right: 25%;
+    margin-bottom: 100px;
+
+    text-align: center;
+}
+
 #RandomizedText {
     margin: 0 0 25px 0;
+
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#ButtonSubmit {
+    background-color: #212121;
+    border: 1px solid #212121;
+
+    color: aliceblue;
+}
+
+#ButtonSubmit:hover {
+    background-color: #424242;
+    translate: .4;
 }
